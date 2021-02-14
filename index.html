@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+
+    <title>API project</title>
+</head>
+
+<body>
+    <div>
+        <p>Task 1. Создайте переменную a = 4. Используя конструкцию if проверьте то a == 4. Выведите сообщение в
+            консоль.</p>
+        <button class="task-1">button</button>
+    </div>
+    <hr>
+
+    <div class="meteo">
+        <div class="meteo__dashboard">
+
+            <div class="meteo__language-list">
+                <input type="radio" class="meteo__language-item" onclick="infoDisplay()" id="romania"
+                    name="languageSelect" value="RO" checked="checked" />
+                <label class="meteo__language-label language_underline" for="romania">
+                    <img src="images\romania.svg" alt="Romania flag" width="80" height="40">
+                </label>
+
+                <input type="radio" class="meteo__language-item" onclick="infoDisplay()" id="ukraine"
+                    name="languageSelect" value="UA" />
+                <label class="meteo__language-label" for="ukraine">
+                    <img src="images\ukraine.svg" alt="Ukraine flag" width="80" height="40">
+                </label>
+
+                <input type="radio" class="meteo__language-item" onclick="infoDisplay()" id="thailand"
+                    name="languageSelect" value="TH" />
+                <label class="meteo__language-label" for="thailand">
+                    <img src="images\thailand.svg" alt="Thailand flag" width="80" height="40">
+                </label>
+            </div>
+            <div class="place-name"></div>
+            <hr>
+            <div class="temperature-value"></div>
+            <div class="disclaimer"></div>
+
+            <div class="features"></div>
+            <div class="humidity-value"></div>
+            <div class="pressure-value"></div>
+            <hr>
+
+            <div class="coordonates">
+
+                <div class="coordonates__input">
+                    <label class="coordonates__latlon" for="latitude">
+                        <img src="images\latitude.svg" alt="latitude icon" width="25" height="20">
+                        <span>latitude</span>
+                    </label>
+                    <input type="number" id="latitude" name="coordonate">
+                </div>
+
+                <div class="coordonates__input">
+                    <label class="coordonates__latlon" for="longitude">
+                        <img src="images\longitude.svg" alt="longitude icon" width="25" height="20">
+                        <span>longitude</span>
+                    </label>
+                    <input type="number" id="longitude" name="coordonate">
+                </div>
+                <input onclick="insertCoordonates()" type="submit" value="Ok">
+            </div>
+            <hr>
+            <div class="city-select">
+                <label for="cities">Select a city:</label>
+                <select name="city" id="cities" onchange="showPosition();">
+                    <option lat="null" lon="null">My Location</option>
+                    <option lat="13.87719" lon="100.71991">Bangkok</option>
+                    <option lat="44.432251" lon="26.10626">Bucharest</option>
+                    <option lat="47.005562" lon="28.8575">Chisinau</option>
+                    <option lat="50.433334" lon="30.516666">Kyiv</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

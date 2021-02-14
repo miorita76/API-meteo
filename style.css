@@ -1,0 +1,128 @@
+html, body {
+    font-family: serif;
+    font-size: 30px;
+}
+body {
+    margin: 20px;
+}
+
+.meteo {
+    display: flex;
+    flex-direction: row-reverse;
+
+    margin: 0 auto;
+
+    width: 800px;
+    height: 800px;
+
+    background-image: url("images/fondal.jpg");
+    background-color: #cccccc;
+}
+
+.meteo__dashboard {
+    align-self: center;
+
+    margin: 0 5% 0 0;
+
+    width: 400px;
+    height: 90%;
+
+    background-color: rgba(204, 170, 127, 0.3);
+}
+
+.meteo__language-list {
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.meteo__language-list > input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.meteo__language-label {
+    cursor: pointer;
+    width: 80px;
+    height: 45px;
+    margin: 20px 0 10px 0;
+}
+
+.meteo__language-label img {
+    opacity: 0.5;
+}
+
+.language_underline {
+    border-bottom: 3px solid rgb(204, 170, 127);
+}
+
+.language_underline img {
+    opacity: 1.0;
+}
+
+.place-name {
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.temperature-value,
+.disclaimer,
+.features,
+.humidity-value,
+.pressure-value {
+    margin: 8px 0;
+    font-size: 40px;
+    text-align: center;
+}
+
+.coordonates {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.coordonates__input {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.coordonates input[type='number'] {
+    height: 30px;
+    width: 200px;
+    color: blue;
+    font-size: 1em;
+}
+
+.coordonates__latlon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+.coordonates input[type='submit'] {
+    margin: 0 auto;
+}
+
+.city-select {
+    display: flex;
+    justify-content: center;
+}
+
+.city-select label { 
+    margin: 0 10px 0 0;
+    font-size: 20px;
+}
+
+.city-select select { 
+    width: 100px;
+}
+
+.city-select input { 
+    margin: 0 0 0 10px;
+}

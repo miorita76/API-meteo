@@ -11,12 +11,6 @@
 </head>
 
 <body>
-    <div>
-        <p>Task 1. Создайте переменную a = 4. Используя конструкцию if проверьте то a == 4. Выведите сообщение в
-            консоль.</p>
-        <button class="task-1">button</button>
-    </div>
-    <hr>
 
     <div class="meteo">
         <div class="meteo__dashboard">
@@ -58,7 +52,9 @@
                         <span>latitude</span>
                     </label>
                     <input type="number" id="latitude" name="coordonate">
+
                 </div>
+                <div id='error_lat'></div>
 
                 <div class="coordonates__input">
                     <label class="coordonates__latlon" for="longitude">
@@ -67,6 +63,8 @@
                     </label>
                     <input type="number" id="longitude" name="coordonate">
                 </div>
+                <div id='error_lon'></div>
+
                 <input onclick="insertCoordonates()" type="submit" value="Ok">
             </div>
             <hr>

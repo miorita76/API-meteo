@@ -1,32 +1,18 @@
-// Task 1
-// Напишите функцию t1, которая при нажатии кнопки выводит в out - 1 переменную a1.
-// Task 1. Создайте переменную a = 4. Используя конструкцию if проверьте то a == 4. Выведите сообщение в консоль.
-
-let a1 = 4;
-function t1() {
-    if (a1 == 4) {
-        console.log(a1);
-    };
-}
-
-document.querySelector('.task-1').onclick = t1;
-
-// Task 2
 function infoDisplay() {
     let checked_language = document.querySelectorAll('.meteo__language-item');
-    let mySelect = document.querySelectorAll('.meteo__language-label');
+    let my_select = document.querySelectorAll('.meteo__language-label');
 
     for (let i = 0; i < checked_language.length; i++) {
         if (checked_language[i].type == "radio" && checked_language[i].checked) {
 
-            mySelect[i].classList.add('language_underline');
+            my_select[i].classList.add('language_underline');
             langFetch = checked_language[i].value;
 
             linkFetch = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=${langFetch}&appid=${appid}`;
 
         }
         else {
-            mySelect[i].classList.remove('language_underline');
+            my_select[i].classList.remove('language_underline');
         };
 
     };
@@ -51,11 +37,11 @@ function infoDisplay() {
 };
 
 function citySelect() {
-    let itemList = document.getElementById("cities").selectedOptions;
+    let item_list = document.getElementById("cities").selectedOptions;
 
-    for (let i = 0; i < itemList.length; i++) {
-        lat = itemList[i].getAttribute("lat");
-        lon = itemList[i].getAttribute("lon");
+    for (let i = 0; i < item_list.length; i++) {
+        lat = item_list[i].getAttribute("lat");
+        lon = item_list[i].getAttribute("lon");
     };
 
     document.getElementById("latitude").value = lat;
@@ -67,11 +53,11 @@ function citySelect() {
 
 function showPosition() {
 
-    let itemList = document.getElementById("cities").selectedOptions;
+    let item_list = document.getElementById("cities").selectedOptions;
 
-    for (let i = 0; i < itemList.length; i++) {
-        lat = itemList[i].getAttribute("lat");
-        lon = itemList[i].getAttribute("lon");
+    for (let i = 0; i < item_list.length; i++) {
+        lat = item_list[i].getAttribute("lat");
+        lon = item_list[i].getAttribute("lon");
     };
 
     if (lat == 'null') {
@@ -101,39 +87,52 @@ function showPosition() {
 
 
 function insertCoordonates() {
+    let x_err = document.getElementById("error_lat");
+    let y_err = document.getElementById("error_lon");
     let x = document.getElementById("latitude").value;
     let y = document.getElementById("longitude").value;
 
     if ((x >= -90) && (x <= 90)) {
+        x_err.style.display = 'none';
+        document.getElementById("latitude").style.color = 'blue';
+        document.getElementById("latitude").style.background = 'white';
         lat = x;
     }
     else {
-        alert('out of range -90 ... 90');
+        /*alert('out of range -90 ... 90');*/
+        x_err.style.display = 'block';
+        x_err.textContent = 'latitude out of range -90 ... 90';
+        x_err.style.color = 'red';
+
+        document.getElementById("latitude").style.color = 'red';
+        document.getElementById("latitude").style.background = 'pink';
     };
 
     if ((y >= -180) && (y <= 180)) {
+        y_err.style.display = 'none';
+        document.getElementById("longitude").style.color = 'blue';
+        document.getElementById("longitude").style.background = 'white';
         lon = y;
     }
     else {
-        alert('out of range -180 ... 180');
+        /*alert('out of range -180 ... 180');*/
+        y_err.style.display = 'block';
+        y_err.textContent = 'longitude out of range -180 ... 180';
+        y_err.style.color = 'red';
+
+        document.getElementById("longitude").style.color = 'red';
+        document.getElementById("longitude").style.background = 'pink';
     };
 
     infoDisplay();
+
 }
 
-
-
-
-//47.003836,28.803185
-// let lat = 46.992739043710586;
-// let lon = 28.819256154301822;
 // let lat = 0;
 // let lon = 0;
 
 let lat = 46.992739043710586;
 let lon = 28.819256154301822;
-
-showPosition();
 
 document.getElementById("latitude").value = lat;
 document.getElementById("longitude").value = lon;

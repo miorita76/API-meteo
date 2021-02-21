@@ -79,17 +79,25 @@ body {
 }
 
 .coordonates {
-    display: flex;
-    flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
     font-size: 16px;
 }
 
+.coordonates input[type='submit'] {
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+}
+
 .coordonates__input {
     display: flex;
     justify-content: center;
-    margin: 5px 0;
+}
+
+#error_lat, #error_lon {
+    margin: 0 0 5px 0;
+    text-align: right;
 }
 
 .coordonates input[type='number'] {
